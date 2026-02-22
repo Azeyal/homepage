@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" 
+content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
     <title>Homepage</title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,24 +25,26 @@
         <div class="panel">
             <div class="panel-title">Willkommen im Menü</div>
 
-            <div class="button">Home</div>
-            <div class="button">News</div>
-            <div class="button">Galerie</div>
-            <div class="button">Kontakt</div>
+            <div class="button" data-page="home">Home</div>
+            <div class="button" data-page="news">News</div>
+            <div class="button" data-page="galerie">Galerie</div>
+            <div class="button" data-page="kontakt">Kontakt</div>
         </div>
 
     </aside>
 
-
-    <!-- MITTELSPALTE -->
-    <main class="content">
-
-        <div class="panel large">
-            <div class="panel-title">Willkommen auf meiner Homepage</div>
-        </div>
-
     </main>
 
+    <!-- middle block-->
+    <div class="panel large">
+    <div class="panel-title" id="main-title">
+        Willkommen auf meiner Homepage
+    </div>
+
+    <div id="main-content">
+        <p>Hier ist dein Startinhalt</p>
+    </div>
+</div>
 
     <!-- RECHTE SPALTE -->
     <aside class="right">
@@ -66,16 +69,23 @@
         <div class="panel">
             <div class="panel-title">For You Bereich</div>
 
-            <div class="button small-btn">Extra 1</div>
-            <div class="button small-btn">Extra 2</div>
-            <div class="button small-btn">Extra 3</div>
+            <div class="button small-btn" data-page="extra1">Extra 1</div>
+            <div class="button small-btn" data-page="extra2">Extra 2</div>
+            <div class="button small-btn" data-page="extra3">Extra 3</div>
         </div>
 
     </aside>
 
 <!-- TOP BAR -->
 <div class="topbar">
+
+    <div class="search-container">
+        <input type="text" placeholder="Suchen..." id="searchInput">
+    </div>
+
     <img src="images/avatar.png" class="top-avatar" id="profileToggle">
+
+</div>
 </div>
 
 <!-- EINSTELLUNGEN PANEL -->
